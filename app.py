@@ -272,6 +272,306 @@ ANCHOR_LOCATIONS = {
     },
 }
 
+STATIC_SUBWAY_STATION_NAMES = sorted(
+    {
+        "4.19민주묘지역",
+        "가락시장역",
+        "가산디지털단지역",
+        "가양역",
+        "가오리역",
+        "가좌역",
+        "강남구청역",
+        "강남역",
+        "강동구청역",
+        "강동역",
+        "강변역",
+        "강일역",
+        "개롱역",
+        "개봉역",
+        "개포동역",
+        "개화산역",
+        "개화역",
+        "거여역",
+        "건대입구역",
+        "경복궁역",
+        "경찰병원역",
+        "고덕역",
+        "고려대역",
+        "고속터미널역",
+        "공덕역",
+        "공릉역",
+        "공항시장역",
+        "광나루역",
+        "광운대역",
+        "광화문역",
+        "광흥창역",
+        "교대역",
+        "구룡역",
+        "구로디지털단지역",
+        "구로역",
+        "구반포역",
+        "구산역",
+        "구의역",
+        "구일역",
+        "구파발역",
+        "국회의사당역",
+        "군자역",
+        "굽은다리역",
+        "금천구청역",
+        "금호역",
+        "길동역",
+        "길음역",
+        "김포공항역",
+        "까치산역",
+        "낙성대역",
+        "남구로역",
+        "남부터미널역",
+        "남성역",
+        "남영역",
+        "남태령역",
+        "내방역",
+        "녹번역",
+        "녹사평역",
+        "녹천역",
+        "노들역",
+        "노량진역",
+        "노원역",
+        "논현역",
+        "당곡역",
+        "당산역",
+        "대림역",
+        "대모산입구역",
+        "대방역",
+        "대청역",
+        "대치역",
+        "대흥역",
+        "도곡역",
+        "도림천역",
+        "도봉산역",
+        "도봉역",
+        "독립문역",
+        "독바위역",
+        "독산역",
+        "돌곶이역",
+        "동대문역",
+        "동대문역사문화공원역",
+        "동대입구역",
+        "동묘앞역",
+        "동작역",
+        "둔촌동역",
+        "둔촌오륜역",
+        "등촌역",
+        "디지털미디어시티역",
+        "뚝섬역",
+        "뚝섬유원지역",
+        "마곡나루역",
+        "마곡역",
+        "마들역",
+        "마장역",
+        "마천역",
+        "마포구청역",
+        "마포역",
+        "망우역",
+        "망원역",
+        "매봉역",
+        "먹골역",
+        "면목역",
+        "명동역",
+        "명일역",
+        "목동역",
+        "몽촌토성역",
+        "무악재역",
+        "문래역",
+        "문정역",
+        "미아사거리역",
+        "미아역",
+        "반포역",
+        "발산역",
+        "방배역",
+        "방이역",
+        "방학역",
+        "방화역",
+        "버티고개역",
+        "보라매공원역",
+        "보라매병원역",
+        "보라매역",
+        "보문역",
+        "복정역",
+        "봉은사역",
+        "봉천역",
+        "봉화산역",
+        "북한산보국문역",
+        "북한산우이역",
+        "불광역",
+        "불암산역",
+        "사가정역",
+        "사당역",
+        "사평역",
+        "삼각지역",
+        "삼성역",
+        "삼성중앙역",
+        "삼양사거리역",
+        "삼양역",
+        "삼전역",
+        "상계역",
+        "상도역",
+        "상봉역",
+        "상수역",
+        "상왕십리역",
+        "상월곡역",
+        "상일동역",
+        "새절역",
+        "샛강역",
+        "서강대역",
+        "서대문역",
+        "서빙고역",
+        "서울대벤처타운역",
+        "서울대입구역",
+        "서울역",
+        "서울숲역",
+        "서울지방병무청역",
+        "서원역",
+        "서초역",
+        "석계역",
+        "석촌고분역",
+        "석촌역",
+        "선릉역",
+        "선유도역",
+        "선정릉역",
+        "성신여대입구역",
+        "성수역",
+        "세종대왕기념관역",
+        "솔밭공원역",
+        "솔샘역",
+        "송정역",
+        "송파나루역",
+        "송파역",
+        "수락산역",
+        "수서역",
+        "수색역",
+        "수유역",
+        "숙대입구역",
+        "숭실대입구역",
+        "시청역",
+        "신금호역",
+        "신길역",
+        "신내역",
+        "신논현역",
+        "신답역",
+        "신당역",
+        "신대방삼거리역",
+        "신대방역",
+        "신도림역",
+        "신목동역",
+        "신림역",
+        "신반포역",
+        "신방화역",
+        "신사역",
+        "신설동역",
+        "신용산역",
+        "신이문역",
+        "신정네거리역",
+        "신정역",
+        "신촌역",
+        "쌍문역",
+        "아차산역",
+        "아현역",
+        "안국역",
+        "안암역",
+        "암사역",
+        "압구정로데오역",
+        "압구정역",
+        "애오개역",
+        "약수역",
+        "양원역",
+        "양재시민의숲역",
+        "양재역",
+        "양천구청역",
+        "양천향교역",
+        "양평역",
+        "어린이대공원역",
+        "언주역",
+        "여의나루역",
+        "여의도역",
+        "역삼역",
+        "역촌역",
+        "연신내역",
+        "염창역",
+        "영등포구청역",
+        "영등포시장역",
+        "영등포역",
+        "오금역",
+        "오류동역",
+        "오목교역",
+        "옥수역",
+        "온수역",
+        "올림픽공원역",
+        "왕십리역",
+        "용답역",
+        "용두역",
+        "용마산역",
+        "용산역",
+        "우장산역",
+        "월계역",
+        "월곡역",
+        "월드컵경기장역",
+        "을지로3가역",
+        "을지로4가역",
+        "을지로입구역",
+        "응봉역",
+        "응암역",
+        "이대역",
+        "이수역",
+        "이촌역",
+        "일원역",
+        "잠실나루역",
+        "잠실새내역",
+        "잠실역",
+        "잠원역",
+        "장승배기역",
+        "장지역",
+        "장한평역",
+        "제기동역",
+        "종각역",
+        "종로3가역",
+        "종로5가역",
+        "종합운동장역",
+        "중계역",
+        "중곡역",
+        "중랑역",
+        "중앙보훈병원역",
+        "증미역",
+        "증산역",
+        "창동역",
+        "창신역",
+        "청구역",
+        "청계산입구역",
+        "청담역",
+        "청량리역",
+        "총신대입구역",
+        "충무로역",
+        "충정로역",
+        "태릉입구역",
+        "한강진역",
+        "한남역",
+        "한성대입구역",
+        "한양대역",
+        "한티역",
+        "합정역",
+        "행당역",
+        "혜화역",
+        "홍대입구역",
+        "홍제역",
+        "화계역",
+        "화곡역",
+        "화랑대역",
+        "회기역",
+        "회현역",
+        "효창공원앞역",
+        "흑석역",
+    }
+)
+
 DISTRICT_CENTERS = {
     "강남구": {"lat": 37.5172, "lon": 127.0473, "aliases": ["강남구청", "삼성동", "역삼동"]},
     "강동구": {"lat": 37.5301, "lon": 127.1238, "aliases": ["강동구청", "천호동", "천호"]},
@@ -346,6 +646,147 @@ def is_in_seoul(lat: float, lon: float) -> bool:
     )
 
 
+def station_display_name(name: str) -> str:
+    cleaned = re.sub(r"\s*\([^)]*\)", "", name).strip()
+    cleaned = cleaned.replace("驛", "역")
+    if not cleaned:
+        return cleaned
+    return cleaned if cleaned.endswith("역") else f"{cleaned}역"
+
+
+def station_sort_key(name: str) -> str:
+    return normalize_place_text(name.removesuffix("역"))
+
+
+def location_from_seed(name: str, location: dict[str, object], source: str) -> dict[str, object]:
+    return {
+        "name": station_display_name(name),
+        "district": location.get("district", "서울"),
+        "lat": float(location["lat"]),
+        "lon": float(location["lon"]),
+        "source": source,
+        "matched_text": name,
+        "commute_column": location.get("commute_column"),
+    }
+
+
+def seeded_subway_stations() -> dict[str, dict[str, object]]:
+    stations: dict[str, dict[str, object]] = {
+        station_name: {
+            "name": station_name,
+            "district": "서울",
+            "source": "내장 역명 목록",
+            "matched_text": station_name,
+        }
+        for station_name in STATIC_SUBWAY_STATION_NAMES
+    }
+
+    for name, location in ANCHOR_LOCATIONS.items():
+        stations[station_display_name(name)] = location_from_seed(name, location, "내장 기준지")
+
+    for name, location in LANDMARK_LOCATIONS.items():
+        if name.endswith("역"):
+            stations[station_display_name(name)] = location_from_seed(name, location, "내장 주요 역")
+
+    return stations
+
+
+def overpass_station_query() -> str:
+    return """
+    [out:json][timeout:25];
+    area["name:ko"="서울특별시"]["boundary"="administrative"]->.seoul;
+    (
+      node["railway"="station"](area.seoul);
+      node["railway"="halt"](area.seoul);
+      node["public_transport"="station"]["subway"="yes"](area.seoul);
+    );
+    out body;
+    """
+
+
+def looks_like_subway_station(tags: dict[str, str]) -> bool:
+    station_tag = tags.get("station", "")
+    railway = tags.get("railway", "")
+    subway = tags.get("subway", "")
+    network = tags.get("network", "")
+    operator = tags.get("operator", "")
+    route_ref = tags.get("ref", "")
+    combined = " ".join([station_tag, railway, subway, network, operator, route_ref]).lower()
+    return (
+        subway == "yes"
+        or station_tag in {"subway", "light_rail", "train"}
+        or "seoul" in combined
+        or "metro" in combined
+        or "서울" in combined
+        or "수도권" in combined
+    )
+
+
+@st.cache_data(ttl=60 * 60 * 24 * 7, show_spinner=False)
+def fetch_overpass_subway_stations() -> dict[str, dict[str, object]]:
+    params = urllib.parse.urlencode({"data": overpass_station_query()}).encode("utf-8")
+    urls = [
+        "https://overpass-api.de/api/interpreter",
+        "https://overpass.kumi.systems/api/interpreter",
+    ]
+
+    for url in urls:
+        request = urllib.request.Request(
+            url,
+            data=params,
+            headers={
+                "User-Agent": "pgis-monthly-rent-survival-map/1.0",
+                "Accept": "application/json",
+            },
+        )
+        try:
+            with urllib.request.urlopen(request, timeout=3) as response:
+                payload = json.loads(response.read().decode("utf-8"))
+        except Exception:
+            continue
+
+        stations: dict[str, dict[str, object]] = {}
+        for element in payload.get("elements", []):
+            tags = element.get("tags", {})
+            raw_name = tags.get("name:ko") or tags.get("name")
+            if not raw_name or not looks_like_subway_station(tags):
+                continue
+
+            lat = element.get("lat")
+            lon = element.get("lon")
+            if lat is None or lon is None:
+                continue
+
+            lat = float(lat)
+            lon = float(lon)
+            if not is_in_seoul(lat, lon):
+                continue
+
+            name = station_display_name(raw_name)
+            if not name or not re.search(r"[가-힣]", name):
+                continue
+
+            stations[name] = {
+                "name": name,
+                "district": "서울",
+                "lat": lat,
+                "lon": lon,
+                "source": "OSM 지하철역 목록",
+                "matched_text": raw_name,
+            }
+
+        if stations:
+            return stations
+
+    return {}
+
+
+def load_subway_stations() -> dict[str, dict[str, object]]:
+    stations = seeded_subway_stations()
+    stations.update(fetch_overpass_subway_stations())
+    return dict(sorted(stations.items(), key=lambda item: station_sort_key(item[0])))
+
+
 def haversine_km(lat1: float, lon1: float, lat2: float, lon2: float) -> float:
     radius_km = 6371.0
     phi1 = math.radians(lat1)
@@ -359,15 +800,18 @@ def haversine_km(lat1: float, lon1: float, lat2: float, lon2: float) -> float:
     return radius_km * 2 * math.atan2(math.sqrt(a), math.sqrt(1 - a))
 
 
-def target_basis_label(target_location: dict[str, object] | None, fallback_anchor: str) -> str:
+def target_basis_label(target_location: dict[str, object] | None, fallback_label: str) -> str:
     if target_location is None:
-        return f"{fallback_anchor} 기준"
+        return f"{fallback_label} 기준"
     district = target_location.get("district")
     name = target_location.get("name")
     return f"{name} 기준" if not district else f"{name}({district}) 기준"
 
 
-def local_geocode_candidates(df: pd.DataFrame) -> list[dict[str, object]]:
+def local_geocode_candidates(
+    df: pd.DataFrame,
+    subway_stations: dict[str, dict[str, object]],
+) -> list[dict[str, object]]:
     candidates: list[dict[str, object]] = []
 
     for name, location in ANCHOR_LOCATIONS.items():
@@ -398,6 +842,26 @@ def local_geocode_candidates(df: pd.DataFrame) -> list[dict[str, object]]:
                 "priority": 45,
             }
         )
+
+    for name, location in subway_stations.items():
+        names = [name, name.removesuffix("역")]
+        if location.get("matched_text"):
+            names.append(str(location["matched_text"]))
+        candidate = {
+            "name": name,
+            "district": location.get("district", "서울"),
+            "source": location.get("source", "지하철역 목록"),
+            "matched_text": name,
+            "match_terms": names,
+            "priority": 48,
+            "kind": "subway_station",
+        }
+        if location.get("lat") is not None and location.get("lon") is not None:
+            candidate["lat"] = float(location["lat"])
+            candidate["lon"] = float(location["lon"])
+        if location.get("commute_column"):
+            candidate["commute_column"] = location["commute_column"]
+        candidates.append(candidate)
 
     for district, location in DISTRICT_CENTERS.items():
         names = [district, *location["aliases"]]
@@ -430,7 +894,11 @@ def local_geocode_candidates(df: pd.DataFrame) -> list[dict[str, object]]:
     return candidates
 
 
-def geocode_from_local_index(address: str, df: pd.DataFrame) -> dict[str, object] | None:
+def geocode_from_local_index(
+    address: str,
+    df: pd.DataFrame,
+    subway_stations: dict[str, dict[str, object]],
+) -> dict[str, object] | None:
     query = normalize_place_text(address)
     if not query:
         return None
@@ -438,7 +906,7 @@ def geocode_from_local_index(address: str, df: pd.DataFrame) -> dict[str, object
     best_match: dict[str, object] | None = None
     best_score = 0
 
-    for candidate in local_geocode_candidates(df):
+    for candidate in local_geocode_candidates(df, subway_stations):
         for term in candidate["match_terms"]:
             normalized_term = normalize_place_text(str(term))
             if len(normalized_term) < 2:
@@ -462,6 +930,16 @@ def geocode_from_local_index(address: str, df: pd.DataFrame) -> dict[str, object
 
     best_match.pop("match_terms", None)
     best_match.pop("priority", None)
+
+    if best_match.get("kind") == "subway_station" and (
+        best_match.get("lat") is None or best_match.get("lon") is None
+    ):
+        resolved = resolve_subway_station_location(str(best_match["name"]), subway_stations)
+        if resolved is None:
+            return None
+        best_match.update(resolved)
+
+    best_match.pop("kind", None)
     return best_match
 
 
@@ -518,12 +996,43 @@ def geocode_from_osm(address: str) -> dict[str, object] | None:
     }
 
 
-def geocode_target(address: str, df: pd.DataFrame) -> dict[str, object] | None:
+def resolve_subway_station_location(
+    station_name: str,
+    subway_stations: dict[str, dict[str, object]],
+) -> dict[str, object] | None:
+    normalized = station_display_name(station_name)
+    station = subway_stations.get(normalized)
+    if station and station.get("lat") is not None and station.get("lon") is not None:
+        return {
+            **station,
+            "name": normalized,
+            "lat": float(station["lat"]),
+            "lon": float(station["lon"]),
+            "matched_text": station.get("matched_text", normalized),
+        }
+
+    geocoded = geocode_from_osm(normalized)
+    if geocoded is None:
+        return None
+
+    return {
+        **geocoded,
+        "name": normalized,
+        "source": "역명 지오코딩",
+        "matched_text": normalized,
+    }
+
+
+def geocode_target(
+    address: str,
+    df: pd.DataFrame,
+    subway_stations: dict[str, dict[str, object]],
+) -> dict[str, object] | None:
     stripped = address.strip()
     if not stripped:
         return None
 
-    local_match = geocode_from_local_index(stripped, df)
+    local_match = geocode_from_local_index(stripped, df, subway_stations)
     if local_match is not None:
         return local_match
 
@@ -1278,47 +1787,34 @@ def normalize_weights(night_priority: bool, convenience_priority: bool) -> dict[
 
 def enrich_scores(
     df: pd.DataFrame,
-    fallback_anchor: str,
-    target_location: dict[str, object] | None,
+    active_location: dict[str, object],
     night_priority: bool,
     convenience_priority: bool,
 ) -> pd.DataFrame:
     scored = df.copy()
 
-    if target_location is not None and target_location.get("commute_column") in scored.columns:
-        scored["commute_min"] = scored[str(target_location["commute_column"])]
+    if active_location.get("commute_column") in scored.columns:
+        scored["commute_min"] = scored[str(active_location["commute_column"])]
         scored["distance_km"] = scored.apply(
             lambda row: haversine_km(
                 float(row["lat"]),
                 float(row["lon"]),
-                float(target_location["lat"]),
-                float(target_location["lon"]),
-            ),
-            axis=1,
-        )
-    elif target_location is not None:
-        scored["commute_min"] = scored.apply(
-            lambda row: estimate_commute_minutes(row, target_location),
-            axis=1,
-        )
-        scored["distance_km"] = scored.apply(
-            lambda row: haversine_km(
-                float(row["lat"]),
-                float(row["lon"]),
-                float(target_location["lat"]),
-                float(target_location["lon"]),
+                float(active_location["lat"]),
+                float(active_location["lon"]),
             ),
             axis=1,
         )
     else:
-        scored["commute_min"] = scored[ANCHOR_LOCATIONS[fallback_anchor]["commute_column"]]
-        anchor_location = ANCHOR_LOCATIONS[fallback_anchor]
+        scored["commute_min"] = scored.apply(
+            lambda row: estimate_commute_minutes(row, active_location),
+            axis=1,
+        )
         scored["distance_km"] = scored.apply(
             lambda row: haversine_km(
                 float(row["lat"]),
                 float(row["lon"]),
-                float(anchor_location["lat"]),
-                float(anchor_location["lon"]),
+                float(active_location["lat"]),
+                float(active_location["lon"]),
             ),
             axis=1,
         )
@@ -1537,13 +2033,16 @@ def render_map(map_df: pd.DataFrame, target_location: dict[str, object] | None) 
 
 
 df_base = load_neighborhoods()
+subway_stations = load_subway_stations()
+subway_station_names = list(subway_stations.keys())
 
 with st.sidebar:
     st.header("조건")
     target_address = st.text_input("학교/직장 주소", placeholder="예: 서울 중구 을지로, 시청역, 강남역 11번 출구")
     fallback_anchor = st.selectbox(
         "주소를 못 찾을 때 사용할 기준지",
-        list(ANCHOR_LOCATIONS.keys()),
+        subway_station_names,
+        index=subway_station_names.index("강남역") if "강남역" in subway_station_names else 0,
     )
     max_deposit = st.slider("보증금 최대", 500, 4000, 2000, 100, format="%d만원")
     max_rent = st.slider("월세 최대", 35, 120, 70, 1, format="%d만원")
@@ -1557,10 +2056,23 @@ with st.sidebar:
     convenience_priority = st.checkbox("편의점/마트 가까움", value=False)
 
     st.divider()
-    st.caption(f"샘플 데이터 기준 · 서울 {df_base['district'].nunique()}개 구 반영")
+    st.caption(
+        f"샘플 데이터 기준 · 서울 {df_base['district'].nunique()}개 구 · "
+        f"기준지 {len(subway_station_names)}개 역"
+    )
 
-target_location = geocode_target(target_address, df_base) if target_address.strip() else None
-df = enrich_scores(df_base, fallback_anchor, target_location, night_priority, convenience_priority)
+fallback_location = resolve_subway_station_location(fallback_anchor, subway_stations)
+fallback_resolution_failed = fallback_location is None
+if fallback_location is None:
+    fallback_location = location_from_seed("강남역", ANCHOR_LOCATIONS["강남역"], "기본 기준지")
+
+target_location = (
+    geocode_target(target_address, df_base, subway_stations)
+    if target_address.strip()
+    else None
+)
+active_location = target_location or fallback_location
+df = enrich_scores(df_base, active_location, night_priority, convenience_priority)
 filtered = apply_filters(
     df,
     max_deposit,
@@ -1576,7 +2088,7 @@ filtered = apply_filters(
 display_df = filtered if not filtered.empty else df
 ranking = filtered.sort_values("survival_score", ascending=False).head(10)
 fallback_ranking = df.sort_values("survival_score", ascending=False).head(10)
-basis_label = target_basis_label(target_location, fallback_anchor)
+basis_label = target_basis_label(active_location, fallback_anchor)
 
 st.markdown(
     """
@@ -1584,7 +2096,8 @@ st.markdown(
         <h1>월세 생존 지도</h1>
         <p>
             학교나 직장 주소를 인식해 목적지 좌표를 잡고, 월세·교통·안전·침수·생활편의 데이터를 합쳐
-            서울 25개 구 대표 동네의 자취 적합도를 비교합니다.
+            서울 25개 구 대표 동네의 자취 적합도를 비교합니다. 주소가 애매하면 서울 지하철역 전체 목록에서
+            가장 가까운 기준지를 골라 계산할 수 있습니다.
         </p>
     </div>
     """,
@@ -1627,11 +2140,22 @@ if target_address:
             f"""
             <div class="warning">
                 입력 주소 <b>{safe_address}</b>를 서울 내 위치로 찾지 못했습니다.
-                현재는 <b>{html.escape(fallback_anchor)}</b> 기준으로 계산합니다.
+                현재는 <b>{html.escape(str(fallback_location['name']))}</b> 기준으로 계산합니다.
             </div>
             """,
             unsafe_allow_html=True,
         )
+
+if fallback_resolution_failed:
+    st.markdown(
+        f"""
+        <div class="warning">
+            선택한 기준지 <b>{html.escape(fallback_anchor)}</b>의 좌표를 찾지 못해
+            기본값인 <b>강남역</b> 기준으로 계산합니다.
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
 
 if filtered.empty:
     st.warning("선택한 조건에 맞는 동네가 없습니다. 지도는 전체 동네 기준으로 표시합니다.")
@@ -1649,7 +2173,7 @@ with map_col:
         """,
         unsafe_allow_html=True,
     )
-    render_map(display_df, target_location)
+    render_map(display_df, active_location)
 
 with rank_col:
     st.subheader("내 예산에 맞는 동네 TOP 10")
