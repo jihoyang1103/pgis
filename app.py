@@ -24,19 +24,63 @@ st.markdown(
     """
     <style>
     :root {
+        color-scheme: light;
         --paper: #f7f5ef;
         --ink: #20252b;
         --muted: #6b7280;
         --line: #e2ded3;
+        --line-soft: #ece8dd;
+        --surface: #ffffff;
+        --surface-alt: #fbfaf6;
+        --chip-bg: #f0ece2;
+        --note-bg: #f3f8fa;
+        --note-ink: #26323a;
+        --warning-bg: #fff5f3;
+        --warning-ink: #4b2f2d;
+        --input-bg: #ffffff;
+        --input-ink: #20252b;
         --green: #239d72;
         --yellow: #d9982f;
         --red: #d95f5f;
         --blue: #2f6f9f;
+        --shadow: 0 1px 2px rgba(32, 37, 43, 0.05);
     }
 
-    .stApp {
+    @media (prefers-color-scheme: dark) {
+        :root {
+            color-scheme: dark;
+            --paper: #0f1216;
+            --ink: #f0f3f6;
+            --muted: #a8b0ba;
+            --line: #2b3139;
+            --line-soft: #242a32;
+            --surface: #171b21;
+            --surface-alt: #1d232b;
+            --chip-bg: #252c35;
+            --note-bg: #142231;
+            --note-ink: #d7e7f5;
+            --warning-bg: #2a1a1d;
+            --warning-ink: #f5d1cf;
+            --input-bg: #11161c;
+            --input-ink: #f0f3f6;
+            --green: #3ecf98;
+            --yellow: #e7b75b;
+            --red: #ef7d7d;
+            --blue: #74aee8;
+            --shadow: 0 1px 2px rgba(0, 0, 0, 0.38);
+        }
+    }
+
+    html, body, .stApp {
         background: var(--paper);
         color: var(--ink);
+    }
+
+    .stApp p,
+    .stApp label,
+    .stApp span,
+    .stApp [data-testid="stMarkdownContainer"] {
+        color: inherit;
     }
 
     .block-container {
@@ -46,12 +90,17 @@ st.markdown(
     }
 
     [data-testid="stSidebar"] {
-        background: #ffffff;
+        background: var(--surface);
         border-right: 1px solid var(--line);
+    }
+
+    [data-testid="stSidebar"] * {
+        color: var(--ink);
     }
 
     h1, h2, h3 {
         letter-spacing: 0;
+        color: var(--ink);
     }
 
     .hero {
@@ -76,11 +125,12 @@ st.markdown(
     }
 
     .metric-card {
-        background: #ffffff;
+        background: var(--surface);
         border: 1px solid var(--line);
         border-radius: 8px;
         padding: 1rem;
         min-height: 112px;
+        box-shadow: var(--shadow);
     }
 
     .metric-card small {
@@ -105,10 +155,11 @@ st.markdown(
     }
 
     .panel {
-        background: #ffffff;
+        background: var(--surface);
         border: 1px solid var(--line);
         border-radius: 8px;
         padding: 1rem;
+        box-shadow: var(--shadow);
     }
 
     .rank-row {
@@ -117,7 +168,7 @@ st.markdown(
         gap: 0.75rem;
         align-items: center;
         padding: 0.8rem 0;
-        border-bottom: 1px solid #ece8dd;
+        border-bottom: 1px solid var(--line-soft);
     }
 
     .rank-row:last-child {
@@ -130,7 +181,7 @@ st.markdown(
         display: grid;
         place-items: center;
         border-radius: 50%;
-        background: #f0ece2;
+        background: var(--chip-bg);
         font-weight: 700;
         color: var(--ink);
     }
@@ -191,27 +242,77 @@ st.markdown(
 
     .note {
         border-left: 4px solid var(--blue);
-        background: #f3f8fa;
+        background: var(--note-bg);
         padding: 0.75rem 0.85rem;
         border-radius: 6px;
         margin: 0.55rem 0;
-        color: #26323a;
+        color: var(--note-ink);
     }
 
     .warning {
         border-left: 4px solid var(--red);
-        background: #fff5f3;
+        background: var(--warning-bg);
         padding: 0.75rem 0.85rem;
         border-radius: 6px;
         margin: 0.55rem 0;
-        color: #4b2f2d;
+        color: var(--warning-ink);
     }
 
     div[data-testid="stMetric"] {
-        background: #ffffff;
+        background: var(--surface);
         border: 1px solid var(--line);
         border-radius: 8px;
         padding: 0.75rem;
+        box-shadow: var(--shadow);
+    }
+
+    div[data-testid="stMetric"] label,
+    div[data-testid="stMetric"] [data-testid="stMetricLabel"],
+    div[data-testid="stMetric"] [data-testid="stMetricValue"] {
+        color: var(--ink);
+    }
+
+    div[data-baseweb="input"],
+    div[data-baseweb="textarea"],
+    div[data-baseweb="select"] > div,
+    textarea,
+    input {
+        background-color: var(--input-bg);
+        color: var(--input-ink);
+        border-color: var(--line);
+    }
+
+    div[data-baseweb="select"] span,
+    div[data-baseweb="select"] div,
+    div[data-baseweb="input"] input,
+    div[data-baseweb="textarea"] textarea {
+        color: var(--input-ink);
+    }
+
+    div[data-baseweb="popover"],
+    div[data-baseweb="menu"],
+    ul[role="listbox"] {
+        background-color: var(--surface);
+        color: var(--ink);
+        border-color: var(--line);
+    }
+
+    section[data-testid="stSidebar"] button,
+    button[kind],
+    div[data-testid="stTabs"] button {
+        color: var(--ink);
+    }
+
+    div[data-testid="stDataFrame"],
+    div[data-testid="stTable"] {
+        color: var(--ink);
+    }
+
+    @media (prefers-color-scheme: dark) {
+        iframe,
+        canvas {
+            color-scheme: dark;
+        }
     }
     </style>
     """,
@@ -1865,6 +1966,26 @@ def map_color(score: int) -> list[int]:
     return [217, 95, 95, 185]
 
 
+def current_theme_is_dark() -> bool:
+    context = getattr(st, "context", None)
+    theme = getattr(context, "theme", {}) if context is not None else {}
+    return isinstance(theme, dict) and theme.get("type") == "dark"
+
+
+def current_map_style() -> str:
+    if current_theme_is_dark():
+        return "https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json"
+    return "https://basemaps.cartocdn.com/gl/positron-gl-style/style.json"
+
+
+def map_text_color() -> list[int]:
+    return [240, 243, 246, 235] if current_theme_is_dark() else [32, 37, 43, 230]
+
+
+def target_color() -> list[int]:
+    return [116, 174, 232, 240] if current_theme_is_dark() else [47, 111, 159, 235]
+
+
 def apply_filters(
     df: pd.DataFrame,
     max_deposit: int,
@@ -1956,7 +2077,7 @@ def render_map(map_df: pd.DataFrame, target_location: dict[str, object] | None) 
         get_position="[lon, lat]",
         get_text="label",
         get_size=13,
-        get_color=[32, 37, 43, 230],
+        get_color=map_text_color(),
         get_text_anchor="'middle'",
         get_alignment_baseline="'center'",
         pickable=False,
@@ -1978,7 +2099,7 @@ def render_map(map_df: pd.DataFrame, target_location: dict[str, object] | None) 
                 "ScatterplotLayer",
                 data=target_df,
                 get_position="[lon, lat]",
-                get_fill_color=[47, 111, 159, 235],
+                get_fill_color=target_color(),
                 get_line_color=[255, 255, 255, 255],
                 get_radius=450,
                 radius_min_pixels=7,
@@ -1993,7 +2114,7 @@ def render_map(map_df: pd.DataFrame, target_location: dict[str, object] | None) 
                 get_position="[lon, lat]",
                 get_text="name",
                 get_size=15,
-                get_color=[47, 111, 159, 255],
+                get_color=target_color(),
                 get_pixel_offset=[0, -28],
                 get_text_anchor="'middle'",
                 get_alignment_baseline="'center'",
@@ -2003,7 +2124,7 @@ def render_map(map_df: pd.DataFrame, target_location: dict[str, object] | None) 
 
     st.pydeck_chart(
         pdk.Deck(
-            map_style="https://basemaps.cartocdn.com/gl/positron-gl-style/style.json",
+            map_style=current_map_style(),
             initial_view_state=pdk.ViewState(
                 latitude=37.545,
                 longitude=126.985,
@@ -2199,7 +2320,7 @@ with detail_col:
         <div class="panel">
             <div class="section-label">월세 생존 점수</div>
             <h3 style="margin:0;">{selected['survival_score']}점 · {score_label(int(selected['survival_score']))}</h3>
-            <p style="color:#6b7280; margin-top:0.45rem;">
+            <p style="color:var(--muted); margin-top:0.45rem;">
                 월세 {selected['monthly_rent']}만원 · 보증금 {selected['deposit']:,}만원 ·
                 역 도보 {selected['station_walk']}분 · 통학/출근 {selected['commute_min']}분 · 목적지 {selected['distance_km']}km
             </p>
