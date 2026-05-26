@@ -320,6 +320,384 @@ st.markdown(
 )
 
 
+LIGHT_THEME = {
+    "scheme": "light",
+    "paper": "#f7f5ef",
+    "ink": "#20252b",
+    "muted": "#6b7280",
+    "line": "#e2ded3",
+    "line_soft": "#ece8dd",
+    "surface": "#ffffff",
+    "surface_alt": "#fbfaf6",
+    "chip_bg": "#f0ece2",
+    "note_bg": "#f3f8fa",
+    "note_ink": "#26323a",
+    "warning_bg": "#fff5f3",
+    "warning_ink": "#4b2f2d",
+    "input_bg": "#ffffff",
+    "input_ink": "#20252b",
+    "green": "#239d72",
+    "yellow": "#d9982f",
+    "red": "#d95f5f",
+    "blue": "#2f6f9f",
+    "shadow": "0 1px 2px rgba(32, 37, 43, 0.05)",
+}
+
+DARK_THEME = {
+    "scheme": "dark",
+    "paper": "#0f1216",
+    "ink": "#f0f3f6",
+    "muted": "#a8b0ba",
+    "line": "#2b3139",
+    "line_soft": "#242a32",
+    "surface": "#171b21",
+    "surface_alt": "#1d232b",
+    "chip_bg": "#252c35",
+    "note_bg": "#142231",
+    "note_ink": "#d7e7f5",
+    "warning_bg": "#2a1a1d",
+    "warning_ink": "#f5d1cf",
+    "input_bg": "#11161c",
+    "input_ink": "#f0f3f6",
+    "green": "#3ecf98",
+    "yellow": "#e7b75b",
+    "red": "#ef7d7d",
+    "blue": "#74aee8",
+    "shadow": "0 1px 2px rgba(0, 0, 0, 0.38)",
+}
+
+
+def css_theme_variables(theme: dict[str, str]) -> str:
+    return f"""
+        color-scheme: {theme["scheme"]};
+        --paper: {theme["paper"]};
+        --ink: {theme["ink"]};
+        --muted: {theme["muted"]};
+        --line: {theme["line"]};
+        --line-soft: {theme["line_soft"]};
+        --surface: {theme["surface"]};
+        --surface-alt: {theme["surface_alt"]};
+        --chip-bg: {theme["chip_bg"]};
+        --note-bg: {theme["note_bg"]};
+        --note-ink: {theme["note_ink"]};
+        --warning-bg: {theme["warning_bg"]};
+        --warning-ink: {theme["warning_ink"]};
+        --input-bg: {theme["input_bg"]};
+        --input-ink: {theme["input_ink"]};
+        --green: {theme["green"]};
+        --yellow: {theme["yellow"]};
+        --red: {theme["red"]};
+        --blue: {theme["blue"]};
+        --shadow: {theme["shadow"]};
+        --background-color: {theme["paper"]};
+        --secondary-background-color: {theme["surface"]};
+        --text-color: {theme["ink"]};
+        --primary-color: {theme["blue"]};
+    """
+
+
+def strong_theme_rules() -> str:
+    return """
+    html,
+    body,
+    .stApp,
+    .main,
+    [data-testid="stApp"],
+    [data-testid="stAppViewContainer"],
+    [data-testid="stVerticalBlock"],
+    [data-testid="stMain"],
+    [data-testid="stHeader"],
+    [data-testid="stToolbar"],
+    [data-testid="stDecoration"] {
+        background-color: var(--paper) !important;
+        color: var(--ink) !important;
+    }
+
+    [data-testid="stHeader"] {
+        background: color-mix(in srgb, var(--paper) 92%, transparent) !important;
+    }
+
+    [data-testid="stSidebar"],
+    [data-testid="stSidebarContent"],
+    section[data-testid="stSidebar"] > div {
+        background-color: var(--surface) !important;
+        color: var(--ink) !important;
+        border-color: var(--line) !important;
+    }
+
+    .stApp *,
+    [data-testid="stSidebar"] * {
+        border-color: var(--line);
+    }
+
+    .stApp,
+    .stApp p,
+    .stApp span,
+    .stApp label,
+    .stApp li,
+    .stApp div,
+    .stApp h1,
+    .stApp h2,
+    .stApp h3,
+    .stApp h4,
+    .stApp h5,
+    .stApp h6,
+    .stApp [data-testid="stMarkdownContainer"] {
+        color: var(--ink);
+    }
+
+    .hero,
+    .metric-card,
+    .panel,
+    div[data-testid="stMetric"],
+    [data-testid="stExpander"],
+    [data-testid="stDataFrame"],
+    [data-testid="stTable"] {
+        background-color: var(--surface) !important;
+        color: var(--ink) !important;
+        border-color: var(--line) !important;
+    }
+
+    .rank-row {
+        border-bottom-color: var(--line-soft) !important;
+    }
+
+    .rank-num {
+        background-color: var(--chip-bg) !important;
+        color: var(--ink) !important;
+    }
+
+    .score-pill {
+        color: #ffffff !important;
+    }
+
+    .score-pill.green,
+    .dot.green {
+        background-color: var(--green) !important;
+    }
+
+    .score-pill.yellow,
+    .dot.yellow {
+        background-color: var(--yellow) !important;
+    }
+
+    .score-pill.red,
+    .dot.red {
+        background-color: var(--red) !important;
+    }
+
+    .hero p,
+    .rank-meta,
+    .legend-item,
+    .section-label,
+    .metric-card small,
+    .metric-card span,
+    [data-testid="stCaptionContainer"],
+    [data-testid="stMetricDelta"] {
+        color: var(--muted) !important;
+    }
+
+    .note {
+        background-color: var(--note-bg) !important;
+        color: var(--note-ink) !important;
+        border-left-color: var(--blue) !important;
+    }
+
+    .warning {
+        background-color: var(--warning-bg) !important;
+        color: var(--warning-ink) !important;
+        border-left-color: var(--red) !important;
+    }
+
+    .note *,
+    .warning * {
+        color: inherit !important;
+    }
+
+    input,
+    textarea,
+    select,
+    [data-baseweb="input"],
+    [data-baseweb="input"] > div,
+    [data-baseweb="textarea"],
+    [data-baseweb="textarea"] > div,
+    [data-baseweb="select"],
+    [data-baseweb="select"] > div,
+    [data-baseweb="slider"] {
+        background-color: var(--input-bg) !important;
+        color: var(--input-ink) !important;
+        border-color: var(--line) !important;
+    }
+
+    input::placeholder,
+    textarea::placeholder,
+    [data-baseweb="input"] input::placeholder,
+    [data-baseweb="textarea"] textarea::placeholder {
+        color: var(--muted) !important;
+        opacity: 1 !important;
+    }
+
+    [data-baseweb="select"] *,
+    [data-baseweb="input"] *,
+    [data-baseweb="textarea"] *,
+    [data-baseweb="checkbox"] *,
+    [data-baseweb="radio"] * {
+        color: var(--input-ink) !important;
+    }
+
+    [data-baseweb="popover"],
+    [data-baseweb="menu"],
+    [role="listbox"],
+    [role="option"] {
+        background-color: var(--surface) !important;
+        color: var(--ink) !important;
+        border-color: var(--line) !important;
+    }
+
+    [role="option"]:hover,
+    [aria-selected="true"] {
+        background-color: var(--surface-alt) !important;
+        color: var(--ink) !important;
+    }
+
+    button,
+    button[kind],
+    [data-testid="stBaseButton-secondary"],
+    [data-testid="stBaseButton-primary"],
+    [data-testid="stTabs"] button {
+        color: var(--ink) !important;
+        border-color: var(--line) !important;
+    }
+
+    [data-testid="stBaseButton-secondary"],
+    button[kind="secondary"] {
+        background-color: var(--surface-alt) !important;
+    }
+
+    [data-testid="stTabs"] [role="tablist"] {
+        border-bottom-color: var(--line) !important;
+    }
+
+    [data-testid="stAlert"] {
+        background-color: var(--warning-bg) !important;
+        color: var(--warning-ink) !important;
+        border-color: var(--line) !important;
+    }
+
+    svg,
+    svg * {
+        color: inherit;
+    }
+
+    svg text {
+        fill: var(--ink) !important;
+    }
+
+    .mini-chart {
+        background-color: var(--surface) !important;
+        border: 1px solid var(--line) !important;
+        border-radius: 8px;
+        box-shadow: var(--shadow);
+        color: var(--ink) !important;
+        padding: 0.8rem 0.9rem 0.65rem;
+    }
+
+    .mini-chart-plot {
+        align-items: flex-end;
+        background:
+            repeating-linear-gradient(
+                to top,
+                transparent 0,
+                transparent calc(25% - 1px),
+                var(--line-soft) calc(25% - 1px),
+                var(--line-soft) 25%
+            );
+        border-bottom: 1px solid var(--line);
+        border-left: 1px solid var(--line);
+        display: flex;
+        gap: 0.7rem;
+        height: var(--chart-height);
+        padding: 1.65rem 0.55rem 0;
+    }
+
+    .mini-chart-col {
+        align-items: stretch;
+        display: flex;
+        flex: 1 1 0;
+        height: 100%;
+        justify-content: flex-end;
+        min-width: 0;
+        position: relative;
+    }
+
+    .mini-chart-bar {
+        background: var(--chart-bar, var(--blue));
+        border-radius: 6px 6px 0 0;
+        box-shadow: 0 0 0 1px color-mix(in srgb, #ffffff 16%, transparent) inset;
+        height: var(--bar-height);
+        min-height: 4px;
+        width: 100%;
+    }
+
+    .mini-chart-value {
+        bottom: calc(var(--bar-height) + 0.38rem);
+        color: var(--ink) !important;
+        font-size: 0.78rem;
+        font-weight: 800;
+        left: 50%;
+        line-height: 1;
+        position: absolute;
+        transform: translateX(-50%);
+        white-space: nowrap;
+    }
+
+    .mini-chart-labels {
+        display: flex;
+        gap: 0.7rem;
+        margin-left: calc(1px + 0.55rem);
+        margin-top: 0.55rem;
+    }
+
+    .mini-chart-label {
+        color: var(--ink) !important;
+        flex: 1 1 0;
+        font-size: 0.78rem;
+        font-weight: 700;
+        line-height: 1.25;
+        min-width: 0;
+        overflow-wrap: anywhere;
+        text-align: center;
+    }
+
+    .mini-chart-axis-title {
+        color: var(--muted) !important;
+        font-size: 0.75rem;
+        font-weight: 700;
+        margin-top: 0.45rem;
+        text-align: center;
+    }
+    """
+
+
+def theme_override_css(theme_mode: str) -> str:
+    if theme_mode == "다크":
+        body = f":root {{ {css_theme_variables(DARK_THEME)} }}\n{strong_theme_rules()}"
+    elif theme_mode == "라이트":
+        body = f":root {{ {css_theme_variables(LIGHT_THEME)} }}\n{strong_theme_rules()}"
+    else:
+        body = f"""
+        @media (prefers-color-scheme: light) {{
+            :root {{ {css_theme_variables(LIGHT_THEME)} }}
+            {strong_theme_rules()}
+        }}
+        @media (prefers-color-scheme: dark) {{
+            :root {{ {css_theme_variables(DARK_THEME)} }}
+            {strong_theme_rules()}
+        }}
+        """
+    return f"<style>{body}</style>"
+
+
 BASE_WEIGHTS = {
     "rent_score": 0.28,
     "transport_score": 0.22,
@@ -1972,18 +2350,91 @@ def current_theme_is_dark() -> bool:
     return isinstance(theme, dict) and theme.get("type") == "dark"
 
 
-def current_map_style() -> str:
-    if current_theme_is_dark():
+def selected_theme_is_dark(theme_mode: str) -> bool:
+    if theme_mode == "다크":
+        return True
+    if theme_mode == "라이트":
+        return False
+    return current_theme_is_dark()
+
+
+def current_map_style(dark_mode: bool) -> str:
+    if dark_mode:
         return "https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json"
     return "https://basemaps.cartocdn.com/gl/positron-gl-style/style.json"
 
 
-def map_text_color() -> list[int]:
-    return [240, 243, 246, 235] if current_theme_is_dark() else [32, 37, 43, 230]
+def map_text_color(dark_mode: bool) -> list[int]:
+    return [240, 243, 246, 235] if dark_mode else [32, 37, 43, 230]
 
 
-def target_color() -> list[int]:
-    return [116, 174, 232, 240] if current_theme_is_dark() else [47, 111, 159, 235]
+def target_color(dark_mode: bool) -> list[int]:
+    return [116, 174, 232, 240] if dark_mode else [47, 111, 159, 235]
+
+
+def chart_palette(dark_mode: bool) -> dict[str, str]:
+    if dark_mode:
+        return {
+            "background": "#171b21",
+            "plot": "#171b21",
+            "text": "#ffffff",
+            "muted": "#d7dee7",
+            "grid": "#303844",
+            "bar": "#74aee8",
+            "bar_alt": "#3ecf98",
+        }
+
+    return {
+        "background": "#ffffff",
+        "plot": "#ffffff",
+        "text": "#20252b",
+        "muted": "#6b7280",
+        "grid": "#e2ded3",
+        "bar": "#2f6f9f",
+        "bar_alt": "#239d72",
+    }
+
+
+def themed_bar_chart(
+    data: pd.DataFrame,
+    x: str,
+    y: str,
+    *,
+    height: int,
+    dark_mode: bool,
+    bar_color: str | None = None,
+) -> None:
+    max_value = float(data[y].max()) if not data.empty else 1.0
+    plot_height = max(130, height - 80)
+    color = bar_color or "var(--blue)"
+
+    columns = []
+    labels = []
+    for row in data.to_dict("records"):
+        label = html.escape(str(row[x]))
+        value = float(row[y])
+        display_value = f"{value:.0f}"
+        bar_height = 0 if max_value <= 0 else max(4, value / max_value * 100)
+        columns.append(
+            f'<div class="mini-chart-col" style="--bar-height:{bar_height:.2f}%;">'
+            f'<span class="mini-chart-value">{display_value}</span>'
+            '<div class="mini-chart-bar"></div>'
+            '</div>'
+        )
+        labels.append(f'<div class="mini-chart-label">{label}</div>')
+
+    chart_html = (
+        f'<div class="mini-chart" style="--chart-height:{plot_height}px; --chart-bar:{color};">'
+        f'<div class="mini-chart-plot">{"".join(columns)}</div>'
+        f'<div class="mini-chart-labels">{"".join(labels)}</div>'
+        f'<div class="mini-chart-axis-title">{html.escape(y)}</div>'
+        '</div>'
+    )
+
+    st.markdown(
+        chart_html,
+        unsafe_allow_html=True,
+    )
 
 
 def apply_filters(
@@ -2052,7 +2503,11 @@ def render_rankings(ranking: pd.DataFrame) -> None:
         )
 
 
-def render_map(map_df: pd.DataFrame, target_location: dict[str, object] | None) -> None:
+def render_map(
+    map_df: pd.DataFrame,
+    target_location: dict[str, object] | None,
+    dark_mode: bool,
+) -> None:
     deck_df = map_df.copy()
     deck_df["color"] = deck_df["survival_score"].apply(map_color)
     deck_df["label"] = deck_df.apply(
@@ -2077,7 +2532,7 @@ def render_map(map_df: pd.DataFrame, target_location: dict[str, object] | None) 
         get_position="[lon, lat]",
         get_text="label",
         get_size=13,
-        get_color=map_text_color(),
+        get_color=map_text_color(dark_mode),
         get_text_anchor="'middle'",
         get_alignment_baseline="'center'",
         pickable=False,
@@ -2099,7 +2554,7 @@ def render_map(map_df: pd.DataFrame, target_location: dict[str, object] | None) 
                 "ScatterplotLayer",
                 data=target_df,
                 get_position="[lon, lat]",
-                get_fill_color=target_color(),
+                get_fill_color=target_color(dark_mode),
                 get_line_color=[255, 255, 255, 255],
                 get_radius=450,
                 radius_min_pixels=7,
@@ -2114,7 +2569,7 @@ def render_map(map_df: pd.DataFrame, target_location: dict[str, object] | None) 
                 get_position="[lon, lat]",
                 get_text="name",
                 get_size=15,
-                get_color=target_color(),
+                get_color=target_color(dark_mode),
                 get_pixel_offset=[0, -28],
                 get_text_anchor="'middle'",
                 get_alignment_baseline="'center'",
@@ -2124,7 +2579,7 @@ def render_map(map_df: pd.DataFrame, target_location: dict[str, object] | None) 
 
     st.pydeck_chart(
         pdk.Deck(
-            map_style=current_map_style(),
+            map_style=current_map_style(dark_mode),
             initial_view_state=pdk.ViewState(
                 latitude=37.545,
                 longitude=126.985,
@@ -2159,6 +2614,14 @@ subway_station_names = list(subway_stations.keys())
 
 with st.sidebar:
     st.header("조건")
+    theme_mode = st.radio(
+        "화면 테마",
+        ["시스템", "라이트", "다크"],
+        index=0,
+        horizontal=True,
+    )
+    st.divider()
+
     target_address = st.text_input("학교/직장 주소", placeholder="예: 서울 중구 을지로, 시청역, 강남역 11번 출구")
     fallback_anchor = st.selectbox(
         "주소를 못 찾을 때 사용할 기준지",
@@ -2181,6 +2644,9 @@ with st.sidebar:
         f"샘플 데이터 기준 · 서울 {df_base['district'].nunique()}개 구 · "
         f"기준지 {len(subway_station_names)}개 역"
     )
+
+st.markdown(theme_override_css(theme_mode), unsafe_allow_html=True)
+dark_mode = selected_theme_is_dark(theme_mode)
 
 fallback_location = resolve_subway_station_location(fallback_anchor, subway_stations)
 fallback_resolution_failed = fallback_location is None
@@ -2294,7 +2760,7 @@ with map_col:
         """,
         unsafe_allow_html=True,
     )
-    render_map(display_df, active_location)
+    render_map(display_df, active_location, dark_mode)
 
 with rank_col:
     st.subheader("내 예산에 맞는 동네 TOP 10")
@@ -2345,7 +2811,14 @@ with score_col:
             ],
         }
     )
-    st.bar_chart(score_breakdown, x="항목", y="점수", height=250)
+    themed_bar_chart(
+        score_breakdown,
+        x="항목",
+        y="점수",
+        height=250,
+        dark_mode=dark_mode,
+        bar_color="var(--green)",
+    )
 
 price_tab, safety_tab, life_tab, community_tab = st.tabs(
     ["전월세", "안전·침수", "생활권", "자취 후기"]
@@ -2365,7 +2838,13 @@ with price_tab:
                 ],
             }
         )
-        st.bar_chart(rent_distribution, x="구간", y="월세(만원)", height=260)
+        themed_bar_chart(
+            rent_distribution,
+            x="구간",
+            y="월세(만원)",
+            height=260,
+            dark_mode=dark_mode,
+        )
     with col_b:
         st.markdown("#### 주거 유형별 평균 월세")
         type_rents = pd.DataFrame(
@@ -2378,7 +2857,13 @@ with price_tab:
                 ],
             }
         )
-        st.bar_chart(type_rents, x="주거 유형", y="평균 월세(만원)", height=260)
+        themed_bar_chart(
+            type_rents,
+            x="주거 유형",
+            y="평균 월세(만원)",
+            height=260,
+            dark_mode=dark_mode,
+        )
 
 with safety_tab:
     safety_cols = st.columns(4)
